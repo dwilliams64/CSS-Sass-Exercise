@@ -31,6 +31,7 @@ body{
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
 }
 
 .logo-box{
@@ -106,6 +107,18 @@ body{
     }
 }
 
+@keyframes moveInBottom {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100%{
+        opacity: 100;
+        transform: translate(0);
+    }
+}
+
 .btn:link, 
 .btn:visited {
     text-transform: uppercase;
@@ -114,6 +127,7 @@ body{
     display: inline-block; 
     border-radius: 100px;
     transition: all .2s;
+    position: relative;    
 }
 
 .btn:hover {
@@ -131,4 +145,29 @@ body{
     color: #777;   
 }
 
+.btn::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    z-index: -1;
+    transition: all .4s;
+}
 
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scale(1.5);
+    opacity: 0;
+}
+
+.btn-animated {    
+    animation: moveInBottom 1s ease-out .75s;
+    animation-fill-mode: backwards;
+}

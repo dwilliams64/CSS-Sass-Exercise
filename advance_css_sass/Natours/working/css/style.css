@@ -7,13 +7,17 @@ Dark green: #28b485
 
 */
 
-*{
+*, 
+*::after, 
+*::before {
     margin: 0;
     padding: 0;
+    box-sizing: inherit;
 }
 
-html {
+:root {
     font-size: 62.5%;
+    
 }
 
 body{
@@ -22,6 +26,7 @@ body{
     line-height: 1.7;
     color: #777;
     padding: 3rem; /*not inherited*/
+    box-sizing: border-box;
 }
 
 .header{
@@ -85,7 +90,7 @@ body{
     }
 
     80%{
-        transform: translateX(10rem);
+        transform: translateX(1rem);
     }
 
     100%{
@@ -113,7 +118,7 @@ body{
 @keyframes moveInBottom {
     0%{
         opacity: 0;
-        transform: translateY(10rem);
+        transform: translateY(3rem);
     }
 
     100%{
@@ -126,7 +131,7 @@ body{
 .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 2rem 4rem;
+    padding: 1.5rem 4rem;
     display: inline-block; 
     border-radius: 10rem;
     transition: all .2s;
@@ -141,7 +146,7 @@ body{
 
 .btn:active {
     transform: translateY(-1rem);
-    box-shadow: 0 .5rem 2rem rgba(0,0,0,.2);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
 }
 
 .btn-white {

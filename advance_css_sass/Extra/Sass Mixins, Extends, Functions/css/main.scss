@@ -66,13 +66,11 @@ nav {
 
 
 .btn-main {    
-    @include link-text-color($color-text-light);
-    
+    @include link-text-color($color-text-light);    
     
     &:link {
         background-color: $color-secondary;
-        @extend %btn-style;
-        
+        @extend %btn-style;        
     }
 
     &:hover {

@@ -1,0 +1,24 @@
+.row {
+    max-width: 114rem;
+    margin: 0 auto;
+    background-color: #eee;
+    
+
+    &:not(:last-child) {
+        //margin-bottom: 80px;
+        color: pink;           
+    }
+
+    
+
+    //.col-1-of-2 {  
+    //    //float: left;      
+    //    background-color: red;
+    //    color: white;
+    //}
+}
+
+.row:last-child {
+    background-color: black;
+}
+

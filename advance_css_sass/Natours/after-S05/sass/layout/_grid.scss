@@ -4,6 +4,7 @@
 
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
+        
     }
     
     @include clearfix;

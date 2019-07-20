@@ -1,17 +1,2 @@
-Saturday Jul-20
-
-1. Zurb
-
-2. Continue Advance Sass CSS course
-
-Sunday Jul-21
-
-1. Review CSS animations
-
-2. Continue Advance Sass CSS course
-
-
-In the future
-
-See what things u learned from your course that you can add to SA Hosting website
+1. when to use margin 0 auto vs. abosulute postioning trick
 

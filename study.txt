@@ -9,4 +9,8 @@ fri 2
 sat 1 
 sun 0
 
+total: 3 to make up
+
+madeup: 0 of 3
+
 

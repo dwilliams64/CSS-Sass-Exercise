@@ -11,6 +11,6 @@ sun 0
 
 total: 3 to make up
 
-madeup: 0 of 3
+madeup: 1 of 3
 
 

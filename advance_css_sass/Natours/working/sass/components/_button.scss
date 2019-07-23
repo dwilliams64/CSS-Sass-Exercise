@@ -1,4 +1,5 @@
 .btn {
+    &,
     &:link, 
     &:visited {
         text-transform: uppercase;
@@ -8,7 +9,11 @@
         border-radius: 10rem;
         transition: all .2s;
         position: relative;
-        font-size: 1.6rem;    
+        font-size: 1.6rem;
+
+        // Turns off default border for <button> elements
+        border: none; 
+        cursor: pointer;   
     }
 
     &:hover {
@@ -22,7 +27,10 @@
         }
     }
 
-    &:active {
+    &:active,
+    &:focus {
+        // Takes focus off buttons in form elements
+        outline: none;
         transform: translateY(-1rem);
         box-shadow: 0 .5rem 1rem rgba($color-black, .2);
     }

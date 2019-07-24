@@ -8,9 +8,17 @@
 fri 2 
 sat 1 
 sun 0
+wed 1
 
-total: 3 to make up
+total: 4 to make up
 
-madeup: 1 of 3
+madeup: 1 of 4
+
+Research
+
+1. display properties
+2. Review position
+3. Watch how to make hover nav effect
+
 
 

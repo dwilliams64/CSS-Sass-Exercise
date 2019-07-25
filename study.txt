@@ -1,6 +1,6 @@
 1. when to use margin 0 auto vs. abosulute postioning trick vs. transform: translate()
 
-2. Ask about parent__element:hover child__element
+2. Difference between display: none and visibilty: hidden
 
 
 

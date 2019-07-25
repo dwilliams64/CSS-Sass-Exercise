@@ -20,6 +20,7 @@ Research
 2. Review position
 3. Watch how to make hover nav effect
 4. how block, inline-block, and inline act inside of parent element
+5. Find out why addEventListener key word this returns window object while annoymous function returns object (look in debug js)
 
 
 

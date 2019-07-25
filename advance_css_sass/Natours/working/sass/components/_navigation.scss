@@ -13,6 +13,7 @@
        right: 6rem;
        background-color: $color-white;
        z-index: 2000;
+       box-shadow: 0 1rem 3rem rgba($color-black, .2);
    } 
 
    &__background {
@@ -24,8 +25,7 @@
        right: 6.5rem;
        background-image: radial-gradient($color-primary-light, $color-primary-dark);
        z-index: 1000;
-
-       transform: scale(100);
+       //transform: scale(100);       
    }
 
    &__nav {
@@ -35,6 +35,7 @@
        top: 0;
        right: 0;
        z-index: 1500;
+       visibility: hidden;
    }
 
    &__list {
@@ -74,7 +75,9 @@
    }
 
 
-
+   &__checkbox:checked ~ &__background {
+        transform: scale(100);
+   }
 
 
 

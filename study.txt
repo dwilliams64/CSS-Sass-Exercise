@@ -19,6 +19,7 @@ Research
 1. display properties
 2. Review position
 3. Watch how to make hover nav effect
+4. how block, inline-block, and inline act inside of parent element
 
 
 

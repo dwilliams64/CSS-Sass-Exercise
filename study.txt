@@ -9,10 +9,11 @@ fri 2
 sat 1 
 sun 0
 wed 1
+fri 1
 
 total: 4 to make up
 
-madeup: 1 of 4
+madeup: 1 of 5
 
 Research
 
@@ -21,6 +22,11 @@ Research
 3. Watch how to make hover nav effect
 4. how block, inline-block, and inline act inside of parent element
 5. Find out why addEventListener key word this returns window object while annoymous function returns object (look in debug js)
+6. Javascript way of making popup and scrolling effects
+
+
+Challenge
+1. Make pure CSS popup in Natours have a zoom-in effect when opened and zoom-out effect when closed
 
 
 

@@ -31,4 +31,9 @@
 body {
     padding: 3rem; /*not inherited*/
     box-sizing: border-box;
+
+    @include respond(tab-port) {
+        padding: 0;
+    } 
+
 }

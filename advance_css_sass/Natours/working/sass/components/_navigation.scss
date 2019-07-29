@@ -16,6 +16,11 @@
        background-color: $color-white;
        z-index: 2000;
        box-shadow: 0 1rem 3rem rgba($color-black, .2);
+
+       @include respond(tab-port) {
+            top: 4rem;
+            right: 4rem;
+       }
    } 
 
    &__background {
@@ -28,6 +33,16 @@
        background-image: radial-gradient($color-primary-light, $color-primary-dark);
        z-index: 1000;
        transition: transform .8s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+       @include respond(tab-port) {
+           top: 4.5rem;
+           right: 4.5rem;
+       }
+
+       @include respond(phone) {
+        top: 3rem;
+        right: 3rem;
+    }
             
    }
 
@@ -142,6 +157,10 @@
     &__checkbox:checked + &__button &__icon::after {
         transform: rotate(-130deg);
         top: 0;
-    }
+        -webkit-transform: rotate(-130deg);
+        -moz-transform: rotate(-130deg);
+        -ms-transform: rotate(-130deg);
+        -o-transform: rotate(-130deg);
+}
 
 }

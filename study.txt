@@ -24,10 +24,18 @@ Research
 4. how block, inline-block, and inline act inside of parent element
 5. Find out why addEventListener key word this returns window object while annoymous function returns object (look in debug js)
 6. Javascript way of making popup and scrolling effects
+7. When to use display block vs. width 100%
+
+Testing
+1. Use Sizzy.io
+2. Make special git repo for testing your pages
 
 
 Challenge
-1. Make pure CSS popup in Natours have a zoom-in effect when opened and zoom-out effect when closed
+1. Fix form field text animation
+2. Go over website and make it more mobile friendly
+3. Add another section that has an embeded video
+4. Make it meet the requirments for freecodecamp
 
 
 

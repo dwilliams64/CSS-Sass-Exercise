@@ -32,10 +32,11 @@ Testing
 
 
 Challenge
-1. Fix form field text animation
-2. Go over website and make it more mobile friendly
-3. Add another section that has an embeded video
-4. Make it meet the requirments for freecodecamp
+1. Fix form field text animation (Natours)
+2. Go over website and make it more mobile friendly (Natours)
+3. Add another section that has an embeded video (Natours)
+4. Make it meet the requirments for freecodecamp (Natours)
+5. Make popup responsive (Natours)
 
 
 

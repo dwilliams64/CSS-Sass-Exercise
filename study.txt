@@ -14,7 +14,7 @@ sun 1
 
 total: 4 to make up
 
-madeup: 1 of 6
+madeup: 2 of 6
 
 Research
 

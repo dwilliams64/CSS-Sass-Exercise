@@ -38,6 +38,7 @@ Challenge
 4. Make it meet the requirments for freecodecamp (Natours)
 5. Make popup responsive (Natours)
 6. Change all <img> to use art direction, density switching, and resolution switching to make responsive <img>
+7. Use media queries to make all the CSS background-images responsive
 
 
 

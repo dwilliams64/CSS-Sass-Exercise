@@ -4,11 +4,16 @@
   "description": "Lading page for natours",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass sass/main.scss css/style.css -w"
+    "sass": "node-sass src/sass/main.scss src/css/style.css -w"
   },
   "author": "PetriD",
   "license": "ISC",
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
     "node-sass": "^4.12.0"
   }
 }

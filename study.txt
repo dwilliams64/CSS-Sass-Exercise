@@ -11,11 +11,11 @@ sun 0
 wed 1
 fri 1
 sun 1
-thurs 1
+
 
 total: 4 to make up
 
-madeup: 2 of 7
+madeup: 3 of 6
 
 Research
 

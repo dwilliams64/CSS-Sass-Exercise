@@ -11,10 +11,11 @@ sun 0
 wed 1
 fri 1
 sun 1
+thurs 1
 
 total: 4 to make up
 
-madeup: 2 of 6
+madeup: 2 of 7
 
 Research
 
@@ -37,8 +38,9 @@ Challenge
 3. Add another section that has an embeded video (Natours)
 4. Make it meet the requirments for freecodecamp (Natours)
 5. Make popup responsive (Natours)
-6. Change all <img> to use art direction, density switching, and resolution switching to make responsive <img>
-7. Use media queries to make all the CSS background-images responsive
+6. Change all <img> to use art direction, density switching, and resolution switching to make responsive <img> (Natours)
+7. Use media queries to make all the CSS background-images responsive (Natours)
+8. Graceful delgation and browser support (Natours: Chrome, Firefox, Edge, IE11)
 
 
 

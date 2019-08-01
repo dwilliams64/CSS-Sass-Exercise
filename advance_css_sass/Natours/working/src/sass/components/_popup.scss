@@ -13,6 +13,14 @@
     -moz-transition: all .5s;
     -ms-transition: all .5s;
     -o-transition: all .5s;
+    
+    
+
+    @supports ((backdrop-filter: blur(10xp)) or (-webkit-backdrop-filter: blur(10xp))) {
+        backdrop-filter: blur(10xp);
+        -webkit-backdrop-filter: blur(10xp);
+        background-color: rgba($color-black, .2);
+    }
 
     &__content {
         @include center_hv;

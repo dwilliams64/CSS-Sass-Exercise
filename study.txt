@@ -42,6 +42,10 @@ Challenge
 6. Change all <img> to use art direction, density switching, and resolution switching to make responsive <img> (Natours)
 7. Use media queries to make all the CSS background-images responsive (Natours)
 8. Graceful delgation and browser support (Natours: Chrome, Firefox, Edge, IE11)
+9. Apply only screen to all media queries to ensure that the media query is only applied to the screen
+10. On Natours navagation make it functional using good old javascript
+11. Make popup in Natours close when clicked on black background using good ol javascript
+12. Apply touch only controls to natours compoents that rely on hover (refer to final video for natours)
 
 
 Read

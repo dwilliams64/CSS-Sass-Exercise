@@ -1,3 +1,4 @@
+// Ask question
 1. when to use margin 0 auto vs. abosulute postioning trick vs. transform: translate()
 
 2. Difference between display: none and visibilty: hidden
@@ -13,7 +14,7 @@ fri 1
 sun 1
 
 
-total: 4 to make up
+total: 6 to make up
 
 madeup: 3 of 6
 
@@ -43,6 +44,8 @@ Challenge
 8. Graceful delgation and browser support (Natours: Chrome, Firefox, Edge, IE11)
 
 
+Read
 
+1. https://www.sitepoint.com/css-layouts-floats-flexbox-grid/
 
 

@@ -37,3 +37,12 @@ body {
     } 
 
 }
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}
+
+@media only screen and (hover:none){
+    //CSS code
+}

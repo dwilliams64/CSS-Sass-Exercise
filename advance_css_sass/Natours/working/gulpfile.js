@@ -7,6 +7,10 @@ const postcss = require('gulp-postcss'); //Needed for autoprefixer
 const autoprefixer = require('autoprefixer'); //Plugin for postcss
 const sourcemaps = require('gulp-sourcemaps'); //Needed for autoprefixer
 const cleanCSS = require('gulp-clean-css'); //Minify CSS
+//const postcss-clip-path-polyfill = require('postcss-clip-path-polyfill'); //Might uninstall
+const cssgrace = require('cssgrace');
+const fs = require('fs');
+
 
 /*
 --- TOP LEVEL FUNCTOINS ---
@@ -23,7 +27,7 @@ gulp.watch - Watch files and folders for change
 
 // Logs Message
 gulp.task('message', async function(){
-    return console.log(gulp-copy);
+    return console.log(fs);
 });
 
 // HTML and CSS //
@@ -73,6 +77,15 @@ gulp.task('minify-css', () => {
       .pipe(cleanCSS({compatibility: 'ie8'}))
       .pipe(gulp.dest('dist/css'));
   });
+
+  //
+  gulp.task('cssIE', function () {
+
+    gulp.src('src/css/main.css')
+        .pipe(postcss('cssgrace'))
+        .pipe(rename('gulp.css'))
+        .pipe(gulp.dest('src/css/main.css'))
+});
 
 // JavaScript //
 

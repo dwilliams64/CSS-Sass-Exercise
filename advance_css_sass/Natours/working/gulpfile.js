@@ -1,9 +1,12 @@
 const gulp = require('gulp');
-const imagemin = require('gulp-imagemin');
-const uglify = require('gulp-uglify');
-const sass =  require('gulp-sass');
-const concat = require('gulp-concat');
-
+const imagemin = require('gulp-imagemin'); //Optimize images
+const uglify = require('gulp-uglify'); //Minify .js
+const sass =  require('gulp-sass'); //Compile Sass
+const concat = require('gulp-concat'); //Concats files
+const postcss = require('gulp-postcss'); //Needed for autoprefixer
+const autoprefixer = require('autoprefixer'); //Plugin for postcss
+const sourcemaps = require('gulp-sourcemaps'); //Needed for autoprefixer
+const cleanCSS = require('gulp-clean-css'); //Minify CSS
 
 /*
 --- TOP LEVEL FUNCTOINS ---
@@ -20,29 +23,58 @@ gulp.watch - Watch files and folders for change
 
 // Logs Message
 gulp.task('message', async function(){
-    return console.log(imagemin);
+    return console.log(gulp-copy);
 });
 
+// HTML and CSS //
+
 // Copy All HTML files
-gulp.task('copyHtml', async function() {
+gulp.task('copyFiles', async function() {
     gulp.src('src/*.html')
         .pipe(gulp.dest('dist'));
+    gulp.src('src/css/fonts/*')        
+        .pipe(gulp.dest('dist/css/fonts'));
 });
 
 // Optimize Images
 gulp.task('imageMin', () =>
 	gulp.src('src/img/*')
 		.pipe(imagemin())
-		.pipe(gulp.dest('dist/images'))
+		.pipe(gulp.dest('dist/img'))
 );
 
 //Complie Sass
 gulp.task('sass', () =>
-    gulp.src('src/sass/*.scss')
+    gulp.src('src/sass/main.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest('src/css'))
 );
 
+//Auto prefix
+gulp.task('autoprefixer', async function() {   
+    return gulp.src('./src/css/main.css')
+      .pipe(sourcemaps.init())
+      .pipe(postcss([ autoprefixer() ]))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest('src/css'))
+  })
+
+
+//Concat CSS
+gulp.task('concat-css', () =>
+    gulp.src('src/css/*.css')
+        .pipe(concat('main.css'))
+        .pipe(gulp.dest('src/css'))
+)
+
+//Minify CSS
+gulp.task('minify-css', () => {
+    return gulp.src('src/css/main.css')
+      .pipe(cleanCSS({compatibility: 'ie8'}))
+      .pipe(gulp.dest('dist/css'));
+  });
+
+// JavaScript //
 
 // Minify JS
 gulp.task('minify', () =>
@@ -61,6 +93,6 @@ gulp.task('scripts', () =>
 
 
 // Run all tasks except for Minify JS
-gulp.task('default', gulp.parallel(
-    ['copyHtml','imageMin','sass']
+gulp.task('default', gulp.series(
+    'copyFiles','imageMin','sass','concat-css','autoprefixer','minify-css'
 ));

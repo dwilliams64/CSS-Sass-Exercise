@@ -10,6 +10,10 @@ const cleanCSS = require('gulp-clean-css'); //Minify CSS
 //const postcss-clip-path-polyfill = require('postcss-clip-path-polyfill'); //Might uninstall
 const cssgrace = require('cssgrace');
 const fs = require('fs');
+const chokidar = require('chokidar');
+const  rename = require('gulp-rename');
+
+
 
 
 /*
@@ -27,7 +31,7 @@ gulp.watch - Watch files and folders for change
 
 // Logs Message
 gulp.task('message', async function(){
-    return console.log(fs);
+    return console.log(rename);
 });
 
 // HTML and CSS //
@@ -79,13 +83,19 @@ gulp.task('minify-css', () => {
   });
 
   //
-  gulp.task('cssIE', function () {
+  gulp.task('cssIE', async function () {
 
     gulp.src('src/css/main.css')
         .pipe(postcss('cssgrace'))
         .pipe(rename('gulp.css'))
-        .pipe(gulp.dest('src/css/main.css'))
+        .pipe(gulp.dest('src/css/main.css'));
+
+
+        
+        
 });
+
+
 
 // JavaScript //
 

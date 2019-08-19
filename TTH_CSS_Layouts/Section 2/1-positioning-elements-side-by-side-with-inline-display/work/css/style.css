@@ -39,7 +39,7 @@ a {
 /* ---- Navigation ---- */
 
 .name {
-	font-size: 1.25em;
+	font-size: 1.25em;	
 }
 
 .name,
@@ -48,6 +48,7 @@ a {
 	background: #fff;
 	margin-top: 6px;
 	margin-bottom: 6px;
+	
 }
 
 .main-nav a {
@@ -94,6 +95,19 @@ a {
 		width: 80%;
 		max-width: 1150px;
 		margin: 0 auto;
+	}
+
+	.name {
+		margin-right: 50px;
+		
+	}
+
+	.name,
+	.main-nav,	
+	.main-nav li {
+
+	display: inline;
+	
 	}
 
 }

@@ -102,7 +102,7 @@ a {
 		max-width: 1150px;
 		margin: 0 auto;
 	}
-
+	
 	.main-nav {
 		float: right;
 	}
@@ -115,10 +115,22 @@ a {
 	.main-nav li {
 		margin-left: 12px;
 	}
+	
+	.primary {
+		width: 60%;
+	}
+
+	.secondary {
+		width: 40%;
+	}
 
 	/* ---- Columns ---- */
 
-	
+	.col {
+		float: right;
+		padding: 0 1em;
+	}
+		
 	
 	/* ------------- */
 

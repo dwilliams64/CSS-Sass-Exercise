@@ -113,6 +113,22 @@ a {
 		border: solid 1px #d9e4ea;
 	}
 
+	.name {
+		float: left;
+	}	
+
+	.main-nav {
+		float: right;
+	}
+
+	.main-nav li {
+		float: left;
+	}
+
+	.main-nav li:not(:last-child) {
+		margin-right: 1em;
+	}
+
 }
 
 

@@ -2,3 +2,10 @@
 //  Functions
 // ======================================
 
+@function px-to-pc($target, $context: $max-width) {
+    @return ($target / $context) * 100%;
+}
+
+.test {
+    line-height: (400px, 1200px);
+}

@@ -6,6 +6,16 @@
   @return ($target / $context) * 100%;
 }
 
+/*
 .test {
   width: px-to-pc(400px, 1200px);
+}
+
+*/
+
+@function per-line($item) {
+  $g-pct: px-to-pc($gutter) * 2;
+  $g-total: $items * $g-pct;
+
+  @return (100 / $items) - $g-total;
 }

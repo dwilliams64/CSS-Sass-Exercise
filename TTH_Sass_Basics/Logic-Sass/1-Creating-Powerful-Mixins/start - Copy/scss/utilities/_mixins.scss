@@ -17,9 +17,18 @@
 }
 
 // Center containers
-@mixin center {
-  width: 90%;
+@mixin center($w) {
+  width: $w;
   max-width: $max-width;
   margin-left: auto;
   margin-right: auto;
+}
+
+// Rounded elements
+
+@mixin roundy($dim, $brdr) {
+  width: $dim;
+  height: $dim;
+  border: $brdr;
+  border-radius: 50%;
 }

@@ -3,9 +3,10 @@
 // ======================================
 
 .img-featured {
-  width: 165px;
-  border: 4px solid $white; 
-  border-radius: 50%;
+  @include roundy(165px, 4px solid $white);
+  // width: 165px;
+  // border: 4px solid $white; 
+  // border-radius: 50%;
   margin-top: 75px;
   position: relative;
   z-index: 100;

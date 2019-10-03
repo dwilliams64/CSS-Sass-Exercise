@@ -7,7 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   @media (min-width: $break-m) {
-    @include center;
+    @include center(90%);
   }
 }  
 

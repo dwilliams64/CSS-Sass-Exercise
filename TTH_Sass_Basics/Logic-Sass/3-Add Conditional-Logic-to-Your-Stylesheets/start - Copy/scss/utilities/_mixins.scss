@@ -44,6 +44,30 @@
   justify-content: $just;
 }
 
+// Media queries
+@mixin mq($break) {
+
+  @if ($break == 'xs') {
+    @media (max-width: $break-xs) {
+      @content;
+    }
+
+  } @else if ($break == 'sm') {
+    @media (min-width: $break-s) {
+      @content;
+    }
+
+  } @else if ($break == 'md') {
+    @media (min-width: $break-m) {
+      @content;
+    }
+
+  } @else if ($break == 'lg') {
+    @media (min-width: $break-l) {
+      @content;
+    }
+  }  
+}
 
 
 

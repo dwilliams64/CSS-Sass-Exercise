@@ -5,9 +5,13 @@
 // Main content
 .main-content {
   @include flexy($wrap: wrap);
-  @media (min-width: $break-m) {
-    @include center(90%);
+  @include mq('md') {
+    @include center(90%); 
   }
+
+  // @media (min-width: $break-m) {
+    // @include center(90%);
+  // }
 }  
 
 
@@ -23,10 +27,13 @@
   padding: 1em 1em 3em; 
   p {
     font-size: 1.2em; 
-  } 
-  @media (min-width: $break-l) {
+  }
+  @include mq('lg') {
     width: 45%;
   }
+  // @media (min-width: $break-l) {
+    // width: 45%;
+  // }
 }
 
 

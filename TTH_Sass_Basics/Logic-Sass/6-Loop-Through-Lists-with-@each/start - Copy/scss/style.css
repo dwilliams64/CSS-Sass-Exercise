@@ -37,4 +37,24 @@
 .box-10 {
   background-color: #47a6ff;
 }
+
+.teacher-chris {
+  background-image: url("img/chris.jpg");
+}
+
+.teacher-jill {
+  background-image: url("img/jill.jpg");
+}
+
+.teacher-barry {
+  background-image: url("img/barry.jpg");
+}
+
+.teacher-wesker {
+  background-image: url("img/wesker.jpg");
+}
+
+.teacher-leon {
+  background-image: url("img/leon.jpg");
+}
 /*# sourceMappingURL=style.css.map */

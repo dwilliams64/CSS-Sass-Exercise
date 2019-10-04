@@ -29,6 +29,14 @@ $break-s: 576px;
 $break-m: 768px;
 $break-l: 992px;
 
+//Sass map for breakpoints
+$breakpoints: (
+    'xs': 575px,
+    'sm': 576px,
+    'med': 768px,
+    'lg': 992px,
+);
+
 
 
 

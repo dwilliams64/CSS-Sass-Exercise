@@ -7,8 +7,12 @@
   margin-top: 75px;
   position: relative;
   z-index: 100;
-  @media (max-width: $break-xs) {
+  @include mq('xs') {
     display: none;
   }
+
+  // @media (max-width: $break-xs) {
+    // display: none;
+  // }
 }
 

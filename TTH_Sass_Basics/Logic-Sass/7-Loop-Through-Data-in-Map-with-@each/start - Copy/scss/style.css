@@ -694,6 +694,30 @@ footer::after {
   color: #31b0cd;
 }
 
+.inc-ent {
+  color: #79ccf5;
+}
+
+.inc-arch {
+  color: #fd6fa6;
+}
+
+.inc-edu {
+  color: #23bbae;
+}
+
+.inc-sim {
+  color: #2377bb;
+}
+
+.inc-soc {
+  color: #ada3f0;
+}
+
+.inc-games {
+  color: #3cb144;
+}
+
 .img-featured {
   width: 165px;
   height: 165px;

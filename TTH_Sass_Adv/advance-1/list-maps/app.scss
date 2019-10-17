@@ -16,17 +16,3 @@ input[disabled] {
     border-color: map-get($input, disabled-border);
     color: map-get($input, disabled-text);
 }
-
-$input-disabled-color: #000000;
-
-$input: (
-  disabled-background: lighten($input-disabled-color, 75%),
-  disabled-border: lighten($input-disabled-color, 50%),
-  disabled-text: lighten($input-disabled-color, 50%)
-);
-
-input[disabled] {
-    background-color: get-map($input, disabled-background); 
-    border-color: get-map($input, disabled-border);
-    color: get-map($input, disabled-text);
-}

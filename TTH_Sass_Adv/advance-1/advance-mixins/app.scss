@@ -1,4 +1,8 @@
 // With using global variables
+
+// config file
+// $add-border: ($position: right, $size: 10px);
+
 // !default variables for the mixin
 
 // $add-border-position: all !default; // global variables we will use as default arguments
@@ -29,7 +33,7 @@
 // Using map-list
 
 // config file
-$add-border: (position right, size 10px);
+$add-border: ($position: right, $size: 10px);
 
 $add-border: (
     position: all,

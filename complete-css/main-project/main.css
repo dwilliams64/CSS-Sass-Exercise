@@ -14,7 +14,7 @@ You decalare the variable at the :root element.
 Then you can use the variables where you see fit.
 See code below to see how it works.
 
-We also used the list-style property and set it to none to remove any list styles such as bullet points.
+
 
 */
 
@@ -55,11 +55,11 @@ We also used the list-style property and set it to none to remove any list style
 }
 
 .main-nav__items {
-    list-style: none; /* gets ride of any list styles such as bullet points */
+    list-style: none;
 }
 
 #product-overview {
-    color: var(--white); /* using variables */
+    color: var(--white);
     background-color: var(--secondary-color); /* using variables */
     padding: 10px;
     width: 100%;
@@ -72,7 +72,6 @@ We also used the list-style property and set it to none to remove any list style
     margin-bottom: 16px;
 }
 
-/* Selects adjacent sibling of section-title  */
 .section-title + p {
     margin-top: 16px;
     margin-bottom: 16px;

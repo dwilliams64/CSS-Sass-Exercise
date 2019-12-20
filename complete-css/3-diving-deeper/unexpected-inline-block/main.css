@@ -8,6 +8,9 @@ When using inline-block the white space between HTML elements can
 cause two inline-block elements to behaive like a block element (sit on a seperate line)
 This is because the white spaces width is added between the two inline-elements.
 
+Since we want to keep our file structure we can just increase the width until the elements are alinged.
+This is just a temapray fix for now.
+
 */
 
 * {
@@ -47,12 +50,13 @@ body {
 
 .main-header > div {
     display: inline-block;
+    font-size: 23px;
 }
 
 .main-nav {
     display: inline-block;
     text-align: right;
-    width: calc(100% - 54px);
+    width: calc(100% - 75px); /* Increase the width for now (the px) for a temp fix */
 }
 
 .main-nav__items {

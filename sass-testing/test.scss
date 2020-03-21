@@ -1,0 +1,209 @@
+///////////////////////////////////////////////////////////////////////
+//
+// DIRECTION TEXT
+//
+// ///////////////////////////////////////////////////////////////////
+
+
+// MAPS
+// ------------------------------------------------------------------
+
+$border-styles: (    
+    border-top: dotted,
+    border-right: solid,
+    border-bottom: dotted,
+    border-left: solid
+);
+
+$border-width: (
+    border-left: 2px,
+    border-top: 1px,
+    border-right: 2px,
+    border-bottom: 3px
+);
+
+$border-color: (
+    border-left: purple,
+    border-top: green,
+    border-right: black,
+    border-bottom: blue
+);
+
+$border-radius: (
+    border-top-left-r: 20%,
+    border-top-right-r: null,
+    border-bottom-right-r: null,
+    border-bottom-left-r: 20%
+);
+
+$margins: (
+    margin-left: 2px,
+    margin-top: 3px,
+    margin-right: 2px,
+    margin-bottom: 3px
+);
+
+$padding: (
+    padding-left: 2px,
+    padding-top: 2px,
+    padding-right: 2px,
+    padding-bottom: 2px
+);
+
+// MIXINS
+// ------------------------------------------------------------------
+
+// Margins
+@mixin margins(
+    $top-m: map-get($margins, margin-top),
+    $right-m: map-get($margins, margin-right),
+    $bottom-m: map-get($margins, margin-bottom),
+    $left-m: map-get($margins, margin-left),
+) {
+    @if ($top-m == null) or ($right-m == null) or ($bottom-m == null) or ($left-m == null) {
+        margin-top: $top-m;
+        margin-right: $right-m;
+        margin-bottom: $bottom-m;
+        margin-left: $left-m;
+    } @else if ($top-m == $bottom-m) and ($top-m == $right-m) and ($top-m == $left-m) {
+        margin: $top-m;        
+    } @else if ($top-m == $bottom-m) and ($right-m == $left-m) {
+        margin: $top-m $left-m;        
+    } @else if ($top-m != $bottom-m) and ($right-m == $left-m) {
+        margin: $top-m $right-m $bottom-m;      
+    } @else {
+        margin: $top-m $right-m $bottom-m $left-m;
+    }
+}
+
+// Border-radius
+@mixin border-radius(
+    $top-left-r: map-get($border-radius, border-top-left-r),
+    $top-right-r: map-get($border-radius, border-top-right-r),
+    $bottom-right-r: map-get($border-radius, border-bottom-right-r),
+    $bottom-left-r: map-get($border-radius, border-bottom-left-r)
+) { 
+    @if ($top-left-r == null) or ($top-right-r == null) or ($bottom-right-r == null) or ($bottom-left-r == null) {
+        border-top-left-radius: $top-left-r;
+        border-top-right-radius: $top-right-r ;
+        border-bottom-right-radius: $bottom-right-r;
+        border-bottom-left-radius: $bottom-left-r;
+    } @else if ($top-left-r == $top-left-r) and 
+        ($top-left-r == $top-right-r) and 
+        ($top-left-r == $bottom-right-r) and 
+        ($top-left-r == $bottom-left-r) {
+            border-radius: $top-left-r;        
+    } @else if ($top-left-r == $bottom-right-r) and ($top-right-r == $bottom-left-r) {
+        border-radius: $top-left-r $bottom-left-r;        
+    } @else if ($top-left-r != $bottom-right-r) and ($top-right-r == $bottom-left-r) {
+        border-radius: $top-left-r $top-right-r $bottom-right-r;      
+    } @else {
+        border-radius: $top-left-r $top-right-r $bottom-right-r $bottom-left-r;
+    }
+}
+
+// Border
+@mixin border-style($top-bs, $right-bs, $bottom-bs, $left-bs) {
+
+    @if ($top-bs == null) or
+        ($right-bs == null) or
+        ($bottom-bs == null) or
+        ($left-bs == null) {
+
+        border-top-style: $top-bs;
+        border-right-style: $right-bs;
+        border-bottom-style: $bottom-bs;
+        border-left-style: $left-bs;                     
+    }
+    @else if ($top-bs == $top-bs) and
+        ($top-bs == $right-bs) and
+        ($top-bs == $bottom-bs) and
+        ($top-bs == $left-bs) {
+            border-style: $top-bs;
+    }
+    @else if ($top-bs == $bottom-bs) and ($right-bs == $left-bs) {
+        border-style: $top-bs $left-bs;
+    } @else if ($top-bs != $bottom-bs) and ($right-bs == $left-bs) {
+        border-style: $top-bs $right-bs $bottom-bs;
+    } @else {
+        border-style: $top-bs $right-bs $bottom-bs $left-bs
+    } 
+}
+
+@mixin border-width($top-bw, $right-bw, $bottom-bw, $left-bw) {
+    @if ($top-bw == $bottom-bw) and ($right-bw == $left-bw) {
+        border-width: $top-bw $left-bw;
+    } @else if ($top-bw != $bottom-bw) and ($right-bw == $left-bw) {
+        border-width: $top-bw $right-bw $bottom-bw;
+    } @else {
+        border-width: $top-bw $right-bw $bottom-bw $left-bw
+    } 
+}
+
+@mixin border-color($top-bc, $right-bc, $bottom-bc, $left-bc) {
+    @if ($top-bc == $bottom-bc) and ($right-bc == $left-bc) {
+        border-color: $top-bc $left-bc;
+    } @else if ($top-bc != $bottom-bc) and ($right-bc == $left-bc) {
+        border-color: $top-bc $right-bc $bottom-bc;
+    } @else {
+        border-color: $top-bc $right-bc $bottom-bc $left-bc
+    } 
+}
+
+@mixin border(
+    $left-bs: map-get($border-styles, border-left),
+    $top-bs: map-get($border-styles, border-top),
+    $right-bs: map-get($border-styles, border-right),
+    $bottom-bs: map-get($border-styles, border-bottom),
+    $left-bw: map-get($border-width, border-left),
+    $top-bw: map-get($border-width, border-top),
+    $right-bw: map-get($border-width, border-right),
+    $bottom-bw: map-get($border-width, border-bottom),
+    $left-bc: map-get($border-color, border-left),
+    $top-bc: map-get($border-color, border-top),
+    $right-bc: map-get($border-color, border-right),
+    $bottom-bc: map-get($border-color, border-bottom),
+
+) {   
+    $check-style: $left-bs;
+    $check-width: $left-bw;
+    $check-color: $left-bc;
+
+    @if ($check-style == $left-bs 
+        and $check-style == $top-bs 
+        and $check-style == $right-bs
+        and $check-style == $bottom-bs) and 
+        ($check-width == $left-bw 
+        and $check-width == $top-bw 
+        and $check-width == $right-bw
+        and $check-width == $bottom-bw) and
+        ($check-width == $left-bw 
+        and $check-width == $top-bw 
+        and $check-width == $right-bw
+        and $check-width == $bottom-bw) and
+        ($check-color == $left-bc 
+        and $check-color == $top-bc 
+        and $check-color == $right-bc
+        and $check-color == $bottom-bc)
+    {   
+        
+        border: $check-width $check-style $check-color;
+
+    } @else {
+        @include border-style($top-bs, $right-bs, $bottom-bs, $left-bs);
+        @include border-width($top-bw, $right-bw, $bottom-bw, $left-bw);
+        @include border-color($top-bc, $right-bc, $bottom-bc, $left-bc);
+    }    
+}
+
+.test-container {
+    margin: 0 auto;
+    max-width: 80%;    
+}
+
+.test-class {    
+    @include border;
+    @include border-radius;
+    @include margins;
+}
+

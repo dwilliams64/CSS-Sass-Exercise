@@ -1,0 +1,14 @@
+.test-container {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.test-class {
+  border-style: dotted solid;
+  border-width: 1px 2px 3px;
+  border-color: green black blue purple;
+  border-top-left-radius: 20%;
+  border-bottom-left-radius: 20%;
+  margin: 3px 2px;
+}
+/*# sourceMappingURL=test.css.map */

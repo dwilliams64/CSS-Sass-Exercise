@@ -4,8 +4,13 @@
 //
 // ///////////////////////////////////////////////////////////////////
 
+// VARIABLES
+// ------------------------------------------------------------------
+$breakpoint-small: true;
+$breakpoint-medium: true;
+$breakpoint-large: true;
 
-// MAPS
+// PROPERTY MAPS
 // ------------------------------------------------------------------
 
 $border-styles: (    
@@ -43,18 +48,100 @@ $margins: (
     margin-bottom: 3px
 );
 
-$padding: (
-    padding-left: 2px,
-    padding-top: 2px,
-    padding-right: 2px,
-    padding-bottom: 2px
+$padding: (    
+    padding-top: 20px,
+    padding-right: 20px,
+    padding-bottom: 20px,
+    padding-left: 20px,
+);
+
+$line-height: (
+    value: 80%
+);
+
+$letter-spacing: (
+    value: 2px
+);
+
+$position: (
+    position-type: relative,
+    position-top: 100px,
+    position-right: null,
+    position-bottom: 100px,
+    position-left: 2px,
+);
+
+$float: (
+    float-value: null
+);
+
+$display: (
+    display-value: inline-block
 );
 
 // MIXINS
 // ------------------------------------------------------------------
 
+// Display
+@mixin display ($display-v: map-get($display, display-value)) {
+    display: $display-v;
+}
+
+// Floats
+@mixin floats ($float-v: map-get($float, float-value)) {
+    float: $float-v;
+}
+
+// Position
+@mixin position (
+    $type-p: map-get($position, position-type),
+    $top-p: map-get($position, position-top),
+    $right-p: map-get($position, position-right),
+    $bottom-p: map-get($position, position-bottom),
+    $left-p: map-get($position, position-left),
+) {
+    position: $type-p;
+    top: $top-p;
+    right: $right-p;
+    bottom: $bottom-p;
+    left: $left-p;
+}
+
+// Line-height
+@mixin line-height ($line-h: map-get($line-height, value)) {
+    line-height: $line-h;
+}
+
+// Letter-spacing
+@mixin letter-spacing ($letter-s: map-get($letter-spacing, value)) {
+    letter-spacing: $letter-s;
+}
+
+// Padding
+@mixin padding (
+    $top-p: map-get($padding, padding-top),
+    $right-p: map-get($padding, padding-right),
+    $bottom-p: map-get($padding, padding-bottom),
+    $left-p: map-get($padding, padding-left),
+) {
+    @if ($top-p == null) or ($right-p == null) or ($bottom-p == null) or ($left-p == null) {
+        padding-top: $top-p;
+        padding-right: $right-p;
+        padding-bottom: $bottom-p;
+        padding-left: $left-p;
+    } @else if ($top-p == $bottom-p) and ($top-p == $right-p) and ($top-p == $left-p) {
+        padding: $top-p;        
+    } @else if ($top-p == $bottom-p) and ($right-p == $left-p) {
+        padding: $top-p $left-p;        
+    } @else if ($top-p != $bottom-p) and ($right-p == $left-p) {
+        padding: $top-p $right-p $bottom-p;      
+    } @else {
+        padding: $top-p $right-p $bottom-p $left-p;
+    }    
+}
+
 // Margins
-@mixin margins(
+@mixin margins (
     $top-m: map-get($margins, margin-top),
     $right-m: map-get($margins, margin-right),
     $bottom-m: map-get($margins, margin-bottom),
@@ -131,7 +218,21 @@ $padding: (
 }
 
 @mixin border-width($top-bw, $right-bw, $bottom-bw, $left-bw) {
-    @if ($top-bw == $bottom-bw) and ($right-bw == $left-bw) {
+    
+    @if ($top-bw == null) or
+        ($right-bw == null) or
+        ($bottom-bw == null) or
+        ($left-bw == null) {            
+            border-top-width: $top-bw;
+            border-right-width: $right-bw;
+            border-bottom-width: $bottom-bw;
+            border-left-width: $left-bw ;
+    } @else if ($top-bw == $top-bw) and 
+        ($top-bw == $right-bw) and 
+        ($top-bw == $bottom-bw) and 
+        ($top-bw == $left-bw) {
+            border-width: $top-bw;
+    } @else if ($top-bw == $bottom-bw) and ($right-bw == $left-bw) {
         border-width: $top-bw $left-bw;
     } @else if ($top-bw != $bottom-bw) and ($right-bw == $left-bw) {
         border-width: $top-bw $right-bw $bottom-bw;
@@ -141,7 +242,22 @@ $padding: (
 }
 
 @mixin border-color($top-bc, $right-bc, $bottom-bc, $left-bc) {
-    @if ($top-bc == $bottom-bc) and ($right-bc == $left-bc) {
+
+    @if ($top-bc == null) or 
+        ($right-bc == null) or 
+        ($bottom-bc == null) or 
+        ($left-bc == null) {
+            border-top-color: $top-bc;
+            border-right-color: $right-bc;
+            border-bottom-color: $bottom-b;
+            border-left-color: $left-bc;
+
+    } @else if ($top-bc == $top-bc) and 
+        ($top-bc == $right-bc) and 
+        ($top-bc == $bottom-bc) and 
+        ($top-bc == $left-bc) {
+            border-color: $top-bc;
+    } @else if ($top-bc == $bottom-bc) and ($right-bc == $left-bc) {
         border-color: $top-bc $left-bc;
     } @else if ($top-bc != $bottom-bc) and ($right-bc == $left-bc) {
         border-color: $top-bc $right-bc $bottom-bc;
@@ -205,5 +321,11 @@ $padding: (
     @include border;
     @include border-radius;
     @include margins;
+    @include padding;
+    @include line-height;
+    @include position;
+    @include floats;
+    @include display;
+    @include letter-spacing;
 }
 

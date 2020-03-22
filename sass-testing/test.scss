@@ -10,60 +10,64 @@ $breakpoint-small: true;
 $breakpoint-medium: true;
 $breakpoint-large: true;
 
-// PROPERTY MAPS
+// MAPS
 // ------------------------------------------------------------------
 
-$border-styles: (    
-    border-top: dotted,
+
+// Small-breakpoint-maps
+// ------------------------------------------------------------------
+
+$border-styles-sm: (    
+    border-top: solid,
     border-right: solid,
-    border-bottom: dotted,
+    border-bottom: solid,
     border-left: solid
 );
 
-$border-width: (
+$border-width-sm: (
     border-left: 2px,
     border-top: 1px,
     border-right: 2px,
     border-bottom: 3px
 );
 
-$border-color: (
+$border-color-sm: (
     border-left: purple,
     border-top: green,
     border-right: black,
     border-bottom: blue
 );
 
-$border-radius: (
+$border-radius-sm: (
     border-top-left-r: 20%,
     border-top-right-r: null,
     border-bottom-right-r: null,
     border-bottom-left-r: 20%
 );
 
-$margins: (
+$margins-sm: (
     margin-left: 2px,
     margin-top: 3px,
     margin-right: 2px,
     margin-bottom: 3px
 );
 
-$padding: (    
+$padding-sm: (    
     padding-top: 20px,
     padding-right: 20px,
     padding-bottom: 20px,
     padding-left: 20px,
 );
 
-$line-height: (
+$line-height-sm: (
     value: 80%
 );
 
-$letter-spacing: (
+$letter-spacing-sm: (
     value: 2px
 );
 
-$position: (
+$position-sm: (
     position-type: relative,
     position-top: 100px,
     position-right: null,
@@ -71,34 +75,173 @@ $position: (
     position-left: 2px,
 );
 
-$float: (
+$float-sm: (
     float-value: null
 );
 
-$display: (
-    display-value: inline-block
+$display-sm: (
+    display-value: null
 );
+
+// Medium-breakpoint-maps
+// ------------------------------------------------------------------
+
+$border-styles-md: (    
+    border-top: solid,
+    border-right: solid,
+    border-bottom: solid,
+    border-left: solid
+);
+
+$border-width-md: (
+    border-left: 2px,
+    border-top: 1px,
+    border-right: 2px,
+    border-bottom: 3px
+);
+
+$border-color-md: (
+    border-left: purple,
+    border-top: green,
+    border-right: black,
+    border-bottom: blue
+);
+
+$border-radius-md: (
+    border-top-left-r: 20%,
+    border-top-right-r: null,
+    border-bottom-right-r: null,
+    border-bottom-left-r: 20%
+);
+
+$margins-md: (
+    margin-left: 2px,
+    margin-top: 3px,
+    margin-right: 2px,
+    margin-bottom: 3px
+);
+
+$padding-md: (    
+    padding-top: 20px,
+    padding-right: 20px,
+    padding-bottom: 20px,
+    padding-left: 20px,
+);
+
+$line-height-md: (
+    value: 80%
+);
+
+$letter-spacing-md: (
+    value: 2px
+);
+
+$position-md: (
+    position-type: relative,
+    position-top: 100px,
+    position-right: null,
+    position-bottom: 100px,
+    position-left: 2px,
+);
+
+$float-md: (
+    float-value: null
+);
+
+$display-md: (
+    display-value: null
+);
+
+// Large-breakpoint-maps
+// ------------------------------------------------------------------
+
+$border-styles-lg: (    
+    border-top: solid,
+    border-right: solid,
+    border-bottom: solid,
+    border-left: solid
+);
+
+$border-width-lg: (
+    border-left: 2px,
+    border-top: 1px,
+    border-right: 2px,
+    border-bottom: 3px
+);
+
+$border-color-lg: (
+    border-left: purple,
+    border-top: green,
+    border-right: black,
+    border-bottom: blue
+);
+
+$border-radius-lg: (
+    border-top-left-r: 20%,
+    border-top-right-r: null,
+    border-bottom-right-r: null,
+    border-bottom-left-r: 20%
+);
+
+$margins-lg: (
+    margin-left: 2px,
+    margin-top: 3px,
+    margin-right: 2px,
+    margin-bottom: 3px
+);
+
+$padding-lg: (    
+    padding-top: 20px,
+    padding-right: 20px,
+    padding-bottom: 20px,
+    padding-left: 20px,
+);
+
+$line-height-lg: (
+    value: 80%
+);
+
+$letter-spacing-lg: (
+    value: 2px
+);
+
+$position-lg: (
+    position-type: relative,
+    position-top: 100px,
+    position-right: null,
+    position-bottom: 100px,
+    position-left: 2px,
+);
+
+$float-lg: (
+    float-value: null
+);
+
+$display-lg: (
+    display-value: null
+);
+
 
 // MIXINS
 // ------------------------------------------------------------------
 
 // Display
-@mixin display ($display-v: map-get($display, display-value)) {
+@mixin display ($display-v: null) {
     display: $display-v;
 }
 
 // Floats
-@mixin floats ($float-v: map-get($float, float-value)) {
+@mixin floats ($float-v: null) {
     float: $float-v;
 }
 
 // Position
 @mixin position (
-    $type-p: map-get($position, position-type),
-    $top-p: map-get($position, position-top),
-    $right-p: map-get($position, position-right),
-    $bottom-p: map-get($position, position-bottom),
-    $left-p: map-get($position, position-left),
+    $type-p: null,
+    $top-p: null,
+    $right-p: null,
+    $bottom-p: null,
+    $left-p: null,
 ) {
     position: $type-p;
     top: $top-p;
@@ -108,21 +251,21 @@ $display: (
 }
 
 // Line-height
-@mixin line-height ($line-h: map-get($line-height, value)) {
+@mixin line-height ($line-h: null) {
     line-height: $line-h;
 }
 
 // Letter-spacing
-@mixin letter-spacing ($letter-s: map-get($letter-spacing, value)) {
+@mixin letter-spacing ($letter-s: null) {
     letter-spacing: $letter-s;
 }
 
 // Padding
 @mixin padding (
-    $top-p: map-get($padding, padding-top),
-    $right-p: map-get($padding, padding-right),
-    $bottom-p: map-get($padding, padding-bottom),
-    $left-p: map-get($padding, padding-left),
+    $top-p: null,
+    $right-p: null,
+    $bottom-p: null,
+    $left-p: null,
 ) {
     @if ($top-p == null) or ($right-p == null) or ($bottom-p == null) or ($left-p == null) {
         padding-top: $top-p;
@@ -142,10 +285,10 @@ $display: (
 
 // Margins
 @mixin margins (
-    $top-m: map-get($margins, margin-top),
-    $right-m: map-get($margins, margin-right),
-    $bottom-m: map-get($margins, margin-bottom),
-    $left-m: map-get($margins, margin-left),
+    $top-m: null,
+    $right-m: null,
+    $bottom-m: null,
+    $left-m: null,
 ) {
     @if ($top-m == null) or ($right-m == null) or ($bottom-m == null) or ($left-m == null) {
         margin-top: $top-m;
@@ -164,11 +307,11 @@ $display: (
 }
 
 // Border-radius
-@mixin border-radius(
-    $top-left-r: map-get($border-radius, border-top-left-r),
-    $top-right-r: map-get($border-radius, border-top-right-r),
-    $bottom-right-r: map-get($border-radius, border-bottom-right-r),
-    $bottom-left-r: map-get($border-radius, border-bottom-left-r)
+@mixin border-radius (
+    $top-left-r: null,
+    $top-right-r: null,
+    $bottom-right-r: null,
+    $bottom-left-r: null
 ) { 
     @if ($top-left-r == null) or ($top-right-r == null) or ($bottom-right-r == null) or ($bottom-left-r == null) {
         border-top-left-radius: $top-left-r;
@@ -190,7 +333,7 @@ $display: (
 }
 
 // Border
-@mixin border-style($top-bs, $right-bs, $bottom-bs, $left-bs) {
+@mixin border-style ($top-bs, $right-bs, $bottom-bs, $left-bs) {
 
     @if ($top-bs == null) or
         ($right-bs == null) or
@@ -217,7 +360,7 @@ $display: (
     } 
 }
 
-@mixin border-width($top-bw, $right-bw, $bottom-bw, $left-bw) {
+@mixin border-width ($top-bw, $right-bw, $bottom-bw, $left-bw) {
     
     @if ($top-bw == null) or
         ($right-bw == null) or
@@ -241,7 +384,7 @@ $display: (
     } 
 }
 
-@mixin border-color($top-bc, $right-bc, $bottom-bc, $left-bc) {
+@mixin border-color ($top-bc, $right-bc, $bottom-bc, $left-bc) {
 
     @if ($top-bc == null) or 
         ($right-bc == null) or 
@@ -266,19 +409,19 @@ $display: (
     } 
 }
 
-@mixin border(
-    $left-bs: map-get($border-styles, border-left),
-    $top-bs: map-get($border-styles, border-top),
-    $right-bs: map-get($border-styles, border-right),
-    $bottom-bs: map-get($border-styles, border-bottom),
-    $left-bw: map-get($border-width, border-left),
-    $top-bw: map-get($border-width, border-top),
-    $right-bw: map-get($border-width, border-right),
-    $bottom-bw: map-get($border-width, border-bottom),
-    $left-bc: map-get($border-color, border-left),
-    $top-bc: map-get($border-color, border-top),
-    $right-bc: map-get($border-color, border-right),
-    $bottom-bc: map-get($border-color, border-bottom),
+@mixin border (
+    $left-bs: null,
+    $top-bs: null,
+    $right-bs: null,
+    $bottom-bs: null,
+    $left-bw: null,
+    $top-bw: null,
+    $right-bw: null,
+    $bottom-bw: null,
+    $left-bc: null,
+    $top-bc: null,
+    $right-bc: null,
+    $bottom-bc: null,
 
 ) {   
     $check-style: $left-bs;
@@ -312,20 +455,157 @@ $display: (
     }    
 }
 
+@mixin small-breakpoint {
+    @include border (
+        map-get($border-styles-sm, border-left),
+        map-get($border-styles-sm, border-top),
+        map-get($border-styles-sm, border-right),
+        map-get($border-styles-sm, border-bottom),
+        map-get($border-width-sm, border-left),
+        map-get($border-width-sm, border-top),
+        map-get($border-width-sm, border-right),
+        map-get($border-width-sm, border-bottom),
+        map-get($border-color-sm, border-left),
+        map-get($border-color-sm, border-top),
+        map-get($border-color-sm, border-right),
+        map-get($border-color-sm, border-bottom)
+    );
+    @include border-radius (
+        map-get($border-radius-sm, border-top-left-r),
+        map-get($border-radius-sm, border-top-right-r),
+        map-get($border-radius-sm, border-bottom-right-r),
+        map-get($border-radius-sm, border-bottom-left-r)
+    );
+    @include margins (
+        map-get($margins-sm, margin-top),
+        map-get($margins-sm, margin-right),
+        map-get($margins-sm, margin-bottom),
+        map-get($margins-sm, margin-left),
+    );
+    @include padding (
+        map-get($padding-sm, padding-top),
+        map-get($padding-sm, padding-right),
+        map-get($padding-sm, padding-bottom),
+        map-get($padding-sm, padding-left),
+    );
+    @include line-height (map-get($line-height-sm, value));
+    @include position (
+        map-get($position-sm, position-type),
+        map-get($position-sm, position-top),
+        map-get($position-sm, position-right),
+        map-get($position-sm, position-bottom),
+        map-get($position-sm, position-left),
+    );
+    @include floats (map-get($float-sm, float-value));
+    @include display (map-get($display-sm, display-value));
+    @include letter-spacing (map-get($letter-spacing-sm, value));
+}
+
+@mixin medium-breakpoint {
+    @include border  (
+        map-get($border-styles-md, border-top),
+        map-get($border-styles-md, border-left),
+        map-get($border-styles-md, border-right),
+        map-get($border-styles-md, border-bottom),
+        map-get($border-width-md, border-left),
+        map-get($border-width-md, border-top),
+        map-get($border-width-md, border-right),
+        map-get($border-width-md, border-bottom),
+        map-get($border-color-md, border-left),
+        map-get($border-color-md, border-top),
+        map-get($border-color-md, border-right),
+        map-get($border-color-md, border-bottom)
+    );
+    @include border-radius (
+        map-get($border-radius-md, border-top-left-r),
+        map-get($border-radius-md, border-top-right-r),
+        map-get($border-radius-md, border-bottom-right-r),
+        map-get($border-radius-md, border-bottom-left-r)
+    );
+    @include margins (
+        map-get($margins-md, margin-top),
+        map-get($margins-md, margin-right),
+        map-get($margins-md, margin-bottom),
+        map-get($margins-md, margin-left),
+    );
+    @include padding (
+        map-get($padding-md, padding-top),
+        map-get($padding-md, padding-right),
+        map-get($padding-md, padding-bottom),
+        map-get($padding-md, padding-left),
+    );
+    @include line-height (map-get($line-height-md, value));
+    @include position (
+        map-get($position-md, position-type),
+        map-get($position-md, position-top),
+        map-get($position-md, position-right),
+        map-get($position-md, position-bottom),
+        map-get($position-md, position-left),
+    );
+    @include floats (map-get($float-md, float-value));
+    @include display (map-get($display-md, display-value));
+    @include letter-spacing (map-get($letter-spacing-md, value));    
+}
+
+@mixin large-breakpoint {
+    @include border (
+        map-get($border-styles-lg, border-left),
+        map-get($border-styles-lg, border-top),
+        map-get($border-styles-lg, border-right),
+        map-get($border-styles-lg, border-bottom),
+        map-get($border-width-lg, border-left),
+        map-get($border-width-lg, border-top),
+        map-get($border-width-lg, border-right),
+        map-get($border-width-lg, border-bottom),
+        map-get($border-color-lg, border-left),
+        map-get($border-color-lg, border-top),
+        map-get($border-color-lg, border-right),
+        map-get($border-color-lg, border-bottom)
+    );
+    @include border-radius (
+        map-get($border-radius-lg, border-top-left-r),
+        map-get($border-radius-lg, border-top-right-r),
+        map-get($border-radius-lg, border-bottom-right-r),
+        map-get($border-radius-lg, border-bottom-left-r)
+    );
+    @include margins (
+        map-get($margins-lg, margin-top),
+        map-get($margins-lg, margin-right),
+        map-get($margins-lg, margin-bottom),
+        map-get($margins-lg, margin-left),
+    );
+    @include padding (
+        map-get($padding-lg, padding-top),
+        map-get($padding-lg, padding-right),
+        map-get($padding-lg, padding-bottom),
+        map-get($padding-lg, padding-left),
+    );
+    @include line-height (map-get($line-height-lg, value));
+    @include position (
+        map-get($position-lg, position-type),
+        map-get($position-lg, position-top),
+        map-get($position-lg, position-right),
+        map-get($position-lg, position-bottom),
+        map-get($position-lg, position-left),
+    );
+    @include floats (map-get($float-lg, float-value));
+    @include display (map-get($display-lg, display-value));
+    @include letter-spacing (map-get($letter-spacing-lg, value));    
+}
+
 .test-container {
     margin: 0 auto;
     max-width: 80%;    
 }
 
-.test-class {    
-    @include border;
-    @include border-radius;
-    @include margins;
-    @include padding;
-    @include line-height;
-    @include position;
-    @include floats;
-    @include display;
-    @include letter-spacing;
+.small-class {    
+    @include small-breakpoint;
 }
 
+.medium-class {
+    @include medium-breakpoint;
+}
+
+.large-class {
+    @include large-breakpoint;
+}

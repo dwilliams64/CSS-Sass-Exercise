@@ -16,9 +16,20 @@ $breakpoint-large: true;
 
 // Small-breakpoint-maps
 // ------------------------------------------------------------------
+$fonter: "Fira Sans", serif;
+
+$font-sm: (
+    font-style: italic,
+    font-var: common-ligatures small-caps,
+    font-weight: bolder,
+    font-size: 30px,
+    line-height: 12px,
+    font-family: arial,
+    font-system: null,
+);
 
 $border-styles-sm: (    
-    border-top: solid,
+    border-top: dotted,
     border-right: solid,
     border-bottom: solid,
     border-left: solid
@@ -60,7 +71,7 @@ $padding-sm: (
 );
 
 $line-height-sm: (
-    value: 80%
+    value: null
 );
 
 $letter-spacing-sm: (
@@ -85,6 +96,16 @@ $display-sm: (
 
 // Medium-breakpoint-maps
 // ------------------------------------------------------------------
+
+$font-md: (
+    font-style: italic,
+    font-var: small-caps,
+    font-weight: bolder,
+    font-size: 30px,
+    line-height: 12px,
+    font-family: arial,
+    font-system: null,
+);
 
 $border-styles-md: (    
     border-top: solid,
@@ -155,6 +176,16 @@ $display-md: (
 // Large-breakpoint-maps
 // ------------------------------------------------------------------
 
+$font-lg: (
+    font-style: italic,
+    font-var: small-caps,
+    font-weight: bolder,
+    font-size: 30px,
+    line-height: 12px,
+    font-family: arial,
+    font-system: null,
+);
+
 $border-styles-lg: (    
     border-top: solid,
     border-right: solid,
@@ -224,6 +255,37 @@ $display-lg: (
 
 // MIXINS
 // ------------------------------------------------------------------
+
+// Font
+@mixin font (
+    $font-st: null,
+    $font-v: null,
+    $font-w: null, 
+    $font-sz: null,
+    $line-h: null,
+    $font-f: null,
+    $font-sy: null,
+) {
+    @if $font-sy != null {
+        font: $font-sy;
+    } @else if ($font-sz == null) or ($font-f == null) {
+        font-style: $font-st;
+        font-variant: $font-v;
+        font-weight: $font-w;
+        font-size: $font-sz;
+        line-height: $line-h;
+        font-family: $font-f;
+    } @else {
+
+        @if ($font-v == small-caps) or ($font-v == normal) {
+            font: $font-st $font-v $font-w unquote($font-sz + "/" + $line-h) $font-f;            
+        } @else {
+            font: $font-st $font-w unquote($font-sz + "/" + $line-h) $font-f;
+            font-variant: $font-v;
+        }
+        
+    }
+}
 
 // Display
 @mixin display ($display-v: null) {
@@ -456,6 +518,16 @@ $display-lg: (
 }
 
 @mixin small-breakpoint {
+    @include font (
+        map-get($font-sm, font-style),
+        map-get($font-sm, font-var),
+        map-get($font-sm, font-weight),
+        map-get($font-sm, font-size),
+        map-get($font-sm, line-height),
+        map-get($font-sm, font-family),
+        map-get($font-sm, font-system)
+    );
+
     @include border (
         map-get($border-styles-sm, border-left),
         map-get($border-styles-sm, border-top),
@@ -470,12 +542,14 @@ $display-lg: (
         map-get($border-color-sm, border-right),
         map-get($border-color-sm, border-bottom)
     );
+
     @include border-radius (
         map-get($border-radius-sm, border-top-left-r),
         map-get($border-radius-sm, border-top-right-r),
         map-get($border-radius-sm, border-bottom-right-r),
         map-get($border-radius-sm, border-bottom-left-r)
     );
+
     @include margins (
         map-get($margins-sm, margin-top),
         map-get($margins-sm, margin-right),
@@ -488,7 +562,9 @@ $display-lg: (
         map-get($padding-sm, padding-bottom),
         map-get($padding-sm, padding-left),
     );
+
     @include line-height (map-get($line-height-sm, value));
+
     @include position (
         map-get($position-sm, position-type),
         map-get($position-sm, position-top),
@@ -496,12 +572,24 @@ $display-lg: (
         map-get($position-sm, position-bottom),
         map-get($position-sm, position-left),
     );
+
     @include floats (map-get($float-sm, float-value));
     @include display (map-get($display-sm, display-value));
     @include letter-spacing (map-get($letter-spacing-sm, value));
 }
 
 @mixin medium-breakpoint {
+
+    @include font (
+        map-get($font-md, font-style),
+        map-get($font-md, font-var),
+        map-get($font-md, font-weight),
+        map-get($font-md, font-size),
+        map-get($font-md, line-height),
+        map-get($font-md, font-family),
+        map-get($font-md, font-system)
+    );
+
     @include border  (
         map-get($border-styles-md, border-top),
         map-get($border-styles-md, border-left),
@@ -516,25 +604,30 @@ $display-lg: (
         map-get($border-color-md, border-right),
         map-get($border-color-md, border-bottom)
     );
+
     @include border-radius (
         map-get($border-radius-md, border-top-left-r),
         map-get($border-radius-md, border-top-right-r),
         map-get($border-radius-md, border-bottom-right-r),
         map-get($border-radius-md, border-bottom-left-r)
     );
+
     @include margins (
         map-get($margins-md, margin-top),
         map-get($margins-md, margin-right),
         map-get($margins-md, margin-bottom),
         map-get($margins-md, margin-left),
     );
+
     @include padding (
         map-get($padding-md, padding-top),
         map-get($padding-md, padding-right),
         map-get($padding-md, padding-bottom),
         map-get($padding-md, padding-left),
     );
+
     @include line-height (map-get($line-height-md, value));
+
     @include position (
         map-get($position-md, position-type),
         map-get($position-md, position-top),
@@ -542,12 +635,24 @@ $display-lg: (
         map-get($position-md, position-bottom),
         map-get($position-md, position-left),
     );
+
     @include floats (map-get($float-md, float-value));
     @include display (map-get($display-md, display-value));
     @include letter-spacing (map-get($letter-spacing-md, value));    
 }
 
 @mixin large-breakpoint {
+
+    @include font (
+        map-get($font-lg, font-style),
+        map-get($font-lg, font-var),
+        map-get($font-lg, font-weight),
+        map-get($font-lg, font-size),
+        map-get($font-lg, line-height),
+        map-get($font-lg, font-family),
+        map-get($font-lg, font-system)
+    );
+
     @include border (
         map-get($border-styles-lg, border-left),
         map-get($border-styles-lg, border-top),
@@ -562,12 +667,14 @@ $display-lg: (
         map-get($border-color-lg, border-right),
         map-get($border-color-lg, border-bottom)
     );
+
     @include border-radius (
         map-get($border-radius-lg, border-top-left-r),
         map-get($border-radius-lg, border-top-right-r),
         map-get($border-radius-lg, border-bottom-right-r),
         map-get($border-radius-lg, border-bottom-left-r)
     );
+
     @include margins (
         map-get($margins-lg, margin-top),
         map-get($margins-lg, margin-right),
@@ -580,7 +687,9 @@ $display-lg: (
         map-get($padding-lg, padding-bottom),
         map-get($padding-lg, padding-left),
     );
+
     @include line-height (map-get($line-height-lg, value));
+
     @include position (
         map-get($position-lg, position-type),
         map-get($position-lg, position-top),
@@ -588,6 +697,7 @@ $display-lg: (
         map-get($position-lg, position-bottom),
         map-get($position-lg, position-left),
     );
+
     @include floats (map-get($float-lg, float-value));
     @include display (map-get($display-lg, display-value));
     @include letter-spacing (map-get($letter-spacing-lg, value));    
@@ -598,14 +708,21 @@ $display-lg: (
     max-width: 80%;    
 }
 
-.small-class {    
-    @include small-breakpoint;
+@if $breakpoint-small {
+    .small-class {    
+        @include small-breakpoint;        
+    }
 }
 
-.medium-class {
-    @include medium-breakpoint;
+@if $breakpoint-medium {
+    .medium-class {
+        @include medium-breakpoint;
+    }
 }
 
-.large-class {
-    @include large-breakpoint;
+
+@if $breakpoint-large {
+    .large-class {
+        @include large-breakpoint;
+    }
 }

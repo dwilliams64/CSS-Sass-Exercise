@@ -9,7 +9,8 @@
     --white: #FFF;      
     --white-dark: #E6E6E6;
     --black: #000; 
-    --layout-padding: 50px;
+    --layout-padding: 45px 0;
+    --responsive-padding: 45px 30px;
 }
 
 /* Base styles */
@@ -19,15 +20,28 @@ body {
     font-family: var(--primary-font);
     font-size: 18px;
     font-weight: 400;
+    color: var(--white);
+}
+
+h1,
+h2,
+strong {
+    font-weight: 900;
+}
+
+h1,
+h2 {
+    margin: 0;
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 36px;    
 }
 
 h2 {
+    margin-bottom: 18px;
     font-size: 24px;
-    color: var(--secondary-color)
+    color: var(--secondary-color);
 }
 
 p {
@@ -47,21 +61,24 @@ img {
     margin: 0 auto;
 }
 
+.section--1,
+.section--2,
 header {
-    background: var(--primary-color);
-    padding: var(--layout-padding);
-    color: var(--white);
+    padding: var(--layout-padding);    
 }
 
-.section--1 {
-    padding: var(--layout-padding);
+header {
+    background: var(--primary-color);         
+}
+
+
+
+.section--1 {    
+    color: var(--primary-color);
 }
 
 .section--2 {
-    background: var(--primary-color);
-    padding: var(--layout-padding);
-    color: white;
-
+    background: var(--primary-color);    
 }
 
 .wrapper p:last-child {
@@ -119,5 +136,13 @@ header {
 @media screen and (max-width: 468px) {
     .btn {
         margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .section--1,
+    .section--2,
+    header {
+        padding: var(--responsive-padding);    
     }
 }

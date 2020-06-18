@@ -5,6 +5,10 @@ body {
     color: #2e354f;
 }
 
+ul {
+    font-size: 1.5em;
+}
+
 h1,
 h2,
 strong {
@@ -73,9 +77,10 @@ section {
 }
 
 .container {
-    width: 620px;
+    max-width: 620px;
+    width: 90%;
     margin: 0 auto;
-    /* border: 2px solid magenta; */
+    border: 2px solid magenta;
 }
 
 .section-two {

@@ -1,3 +1,8 @@
+/* rems scale to html document root which is <html> */
+html {
+    font-size: 30px; /* What are rems scale to */
+}
+
 body {
     margin: 0;
     font-size: 10px;
@@ -5,8 +10,16 @@ body {
     color: #2e354f;
 }
 
-ul {
-    font-size: 1.5em;
+.section-one {
+    font-size: 2rem; /* scales to root (<html>) font-size of 30 px */
+}
+
+ul {    
+    font-size: 1.5rem; /* scales to root (<html>) font-size of 30 px */
+}
+
+li {
+    font-size: 1.5rem; /* scales to root (<html>) font-size of 30 px */
 }
 
 h1,
@@ -18,17 +31,13 @@ strong {
 /* Typography */
 
 h1 {
-    font-size: 3em;
+    font-size: 3rem;
     margin: 0;
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 2rem;
     color: #ef5839;
-}
-
-p {
-    font-size: 1.5em;
 }
 
 a {
@@ -81,10 +90,9 @@ section {
 }
 
 .container {
-    max-width: 620px;
-    width: 90%;
+    width: 620px;
     margin: 0 auto;
-    border: 2px solid magenta;
+    /* border: 2px solid magenta; */
 }
 
 .section-two {

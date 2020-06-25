@@ -11,7 +11,35 @@ body {
     font-size: 1.125rem;
     color: var(--tertiary-color);
     margin: 0;
+    background: pink;
 }
+
+/* from a minimum width of 400px or higher
+@media (min-width: 400px) {
+    body {
+        background: purple;
+    }
+} */
+
+
+/* from a minimum width of 400px to a width of 649px */
+@media (min-width: 400px) and (max-width: 649px) {
+    body {
+        background: purple;
+    }
+}
+
+
+/* from a minimum width of 650px or higher */
+@media (min-width: 650px) {
+    body {
+        background: tomato;
+    }
+}
+
+
+
+
 
 h1 {
     font-size: 3rem;

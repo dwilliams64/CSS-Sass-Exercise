@@ -40,6 +40,7 @@ h3 {
     font-family: var(--secondary-font);
     font-weight: 400; /* so the weight is the same on all computers */
     color: var(--blue-dark);
+    margin-top: 0;
 }
 
 h1 {
@@ -89,10 +90,8 @@ a:hover {
 }
 
 .article__info {
-    font-family: var(--primary-font);    
-    font-weight: 300;
+    margin: 2em 0;
 }
-
 
 
 /* =================
@@ -100,7 +99,7 @@ Layout
 ================= */
 
 .wrapper {
-    border: 1px solid magenta;    
+    /* border: 1px solid magenta;     */
     max-width: 900px;
     width: 90%;
     margin: 0 auto;
@@ -188,4 +187,27 @@ nav a:focus {
     aside {
         width: 20%;
     }
+}
+
+/* articles */
+
+.article__featured {
+    border-bottom: 1px solid var(--grey-dark);
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    /* background: pink; */
+}
+
+.article__recent {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+.article__recent-main {
+    order: 2;
+}
+
+.article__recent-secondary {
+    order: 1;
 }

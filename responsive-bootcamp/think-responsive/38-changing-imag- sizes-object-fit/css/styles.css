@@ -40,11 +40,16 @@ h3 {
     font-family: var(--secondary-font);
     font-weight: 400; /* so the weight is the same on all computers */
     color: var(--blue-dark);
+    margin-top: 0;
 }
 
 h1 {
     font-size: 2rem;
     margin: 0;
+}
+
+p {
+    margin-top: 0;
 }
 
 a {
@@ -89,18 +94,29 @@ a:hover {
 }
 
 .article__info {
-    font-family: var(--primary-font);    
-    font-weight: 300;
+    margin: 2em 0;
 }
 
+/* =================
+Utilites
+================= */
 
+.img-cover {
+    object-fit: cover;
+    /* object-position: center; */
+}
+
+.img-cover-left {
+    object-fit: cover;
+    object-position: left;
+}
 
 /* =================
 Layout
 ================= */
 
 .wrapper {
-    border: 1px solid magenta;    
+    /* border: 1px solid magenta;     */
     max-width: 900px;
     width: 90%;
     margin: 0 auto;
@@ -117,6 +133,7 @@ header {
     background: var(--grey-light);
     padding: 1em 0;
     text-align: center;
+    margin-bottom: 2em;
 }
 
 @media (min-width: 696px) {
@@ -187,5 +204,62 @@ nav a:focus {
 
     aside {
         width: 20%;
+    }
+}
+
+/* articles */
+
+.article__featured {
+    border-bottom: 1px solid var(--grey-dark);
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    /* background: pink; */
+}
+
+.article__recent {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+.article__recent-main {
+    order: 2;
+}
+
+.article__recent-secondary {
+    order: 1;
+}
+
+@media (min-width: 696px) {
+
+    .article__featured {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .article__image-featured {
+        order: -2;
+    }
+
+    .article__featured-info {
+        order: -1;
+    }
+
+    .article__recent {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .article__recent-main {
+        width: 68%;
+    }
+
+    .article__recent-secondary {
+        width: 30%;
+    }
+
+    .article__image {
+        width: 100%;
+        min-height: 250px;             
     }
 }

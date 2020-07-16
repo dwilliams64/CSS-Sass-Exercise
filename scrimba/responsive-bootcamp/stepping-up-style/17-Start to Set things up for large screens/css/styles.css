@@ -40,15 +40,6 @@ body {
     text-align: center;
 }
 
-/* =================
-   Utilites 
-   ================= */
-
-.d-flex {
-    display: flex;
-    flex-direction: column;
-}
-
 
 /* =================
    Typography 

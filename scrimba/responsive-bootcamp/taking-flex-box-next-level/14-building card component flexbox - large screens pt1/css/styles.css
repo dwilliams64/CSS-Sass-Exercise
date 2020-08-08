@@ -24,9 +24,22 @@
     flex-direction: column;
 }
 
-.card__image {
-    object-fit: cover;
-    height: 150px; /* temp */
+@media (min-width: 600px) {
+    .card {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .card__image {
+        height: 300px;
+    }
+}
+
+.card__image {    
+    object-fit: cover;    
+    flex-basis: 200px;
+    min-width: 0;
+    min-height: 0; 
 }
 
 .card__content {
@@ -58,6 +71,12 @@
     justify-content: space-between;
     align-items: flex-end;    
     font-weight: 400;
+}
+
+@media (min-width: 600px) {
+    .card__footer {
+        align-self: flex-end;
+    }
 }
 
 .card__read {

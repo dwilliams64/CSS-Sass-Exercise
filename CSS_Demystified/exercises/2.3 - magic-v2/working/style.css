@@ -47,7 +47,7 @@ ol[class] {
 
 /* Utility classes */
 .flow-content > * + * {
-  margin-top: 1.25rem;
+  margin-top: var(--flow-space, var(--spacer));
 }
 
 .container {
@@ -133,7 +133,12 @@ section {
 
 /* sections layout */
 
+.hero {
+  --flow-space: 2rem;
+}
+
 .cta {
+  --flow-space: 2rem;
   text-align: center;
   background-image: url(./assets/cta-bg.jpg);
 }
@@ -146,6 +151,5 @@ section {
   background-color: var(--clr-accent-400);
   position: absolute;
   transform: translate(-.5rem, -.5rem);
-  z-index: -1;
-  
+  z-index: -1;  
 }

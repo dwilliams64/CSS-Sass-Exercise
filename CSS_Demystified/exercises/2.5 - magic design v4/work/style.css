@@ -123,10 +123,25 @@ img {
   --accent: var(--clr-neutral-100);
 }
 
-/* .bg-dark {
-  color: var(--clr-neutral-100);
-  background: var(--clr-neutral-900);
-} */
+.corner-square {
+  position: relative;
+}
+
+.corner-square:nth-of-type(2n) {
+  --accent: black;
+}
+
+.corner-square::before {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  background: var(--accent, var(--clr-accent-400));
+  position: absolute;
+  z-index: -1;
+  top: -.5rem;
+  left: -.5rem;
+}
 
 .text-accent {
   color: var(--clr-accent-400);
@@ -243,17 +258,6 @@ section {
   .hero {
     padding: 0;
   }
-}
-
-.join-now li::before {
-  content: "";
-  display: block;
-  width: 5rem;
-  height: 5rem;
-  background: var(--clr-accent-400);
-  position: absolute;
-  z-index: -1;
-  transform: translate(-0.5rem, -0.5rem);
 }
 
 .cta {

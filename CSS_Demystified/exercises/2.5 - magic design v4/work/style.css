@@ -123,12 +123,18 @@ img {
   --accent: var(--clr-neutral-100);
 }
 
+.bg-light {
+  --bg: var(--clr-neutral-300);
+  --fg: var(--clr-neutral-700);
+  --accent: var(--clr-accent-400);
+}
+
 .corner-square {
   position: relative;
 }
 
 .corner-square:nth-of-type(2n) {
-  --accent: black;
+  --accent: var(--clr-neutral-900);
 }
 
 .corner-square::before {
@@ -144,7 +150,7 @@ img {
 }
 
 .text-accent {
-  color: var(--clr-accent-400);
+  color: var(--accent, var(--clr-accent-400));
 }
 
 /* general styling */
@@ -262,7 +268,16 @@ section {
 
 .cta {
   background-size: cover;
+  background-blend-mode: multiply;
   text-align: center;
+}
+
+.cta-bg-1 {
+  background-image: url(./assets/cta-bg-1.jpg);
+}
+
+.cta-bg-2 {
+  background-image: url(./assets/cta-bg-2.jpg);
 }
 
 .testimonials {

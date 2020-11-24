@@ -32,6 +32,13 @@
   box-sizing: border-box;
 }
 
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+  line-height: 1.2;
+}
+
 h1,
 h2,
 h3,
@@ -116,20 +123,33 @@ body {
   font-weight: 400;
   color: var(--clr-neutral-900);
   margin: 0;
+  line-height: 1.5;
 }
 
-h1 {
-  font-weight: 400;
-}
-
-h1 span {
-  font-weight: 700;
+h2,
+.h2 {
+  font-weight: var(--fw-700);
+  font-size: var(--fs-700);
 }
 
 a {
   color: var(--clr-accent-500);
   text-decoration: none;
   font-weight: var(--fw-700);
+}
+
+.page-heading {
+  font-weight: var(--fw-400);
+}
+
+.section-title {
+  display: inline-block;
+  font-size: var(--fs-300);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: var(--clr-neutral-900);
+  color: red;
+  padding: .25em .5em;
 }
 
 .btn {

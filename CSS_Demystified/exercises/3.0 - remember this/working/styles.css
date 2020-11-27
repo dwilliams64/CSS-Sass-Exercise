@@ -165,12 +165,12 @@ section {
   align-items: center;
   padding: 0.5em 2em 0.5em 0.5em;
   line-height: 1.6;
-  /* gap: 1rem; */
+  gap: 1rem;
 }
 
-.team-member > * + *{
+/* .team-member > * + *{
   margin-left: 1rem;
-}
+} */
 
 .team-member img {
   width: 10rem;

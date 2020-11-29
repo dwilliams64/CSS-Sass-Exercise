@@ -116,6 +116,10 @@ body {
   margin-top: var(--flow-space, var(--spacer));
 }
 
+.xl-space {
+  margin-top: 5rem;
+}
+
 .container {
   max-width: 50rem;
   margin: 0 auto;
@@ -160,6 +164,14 @@ section {
     padding: 3.5rem 0;
   }
 }
+
+/* homepage styles */
+
+.intro {
+  --flow-space: 2em;
+}
+
+/* blog page styles */
 
 
 /* components */

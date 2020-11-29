@@ -1,4 +1,6 @@
 :root {
+  --spacer: 1em;
+
   --ff-sans: "IBM Plex Sans", sans-serif;
   --ff-serif: "IBM Plex Serif", serif;
 
@@ -28,6 +30,13 @@
   --br: 1rem;
 }
 
+@media (min-width: 40em) {
+  :root {
+    --fs-500: 1.75rem;
+    --fs-600: 2.125rem;
+    --fs-900: 4.25rem;
+  }
+}
 
 /* reset */
 
@@ -103,6 +112,10 @@ body {
   font-size: var(--fs-900);
 }
 
+.flow-content > * + * {
+  margin-top: var(--flow-space, var(--spacer));
+}
+
 .container {
   max-width: 50rem;
   margin: 0 auto;
@@ -134,4 +147,29 @@ h3,
 .section-title,
 .section-subtitle {
   font-size: var(--fs-600);
+}
+
+/* general layout */
+
+section {
+  padding: 2.5rem 0;
+}
+
+@media (min-width: 40em) {
+  section {
+    padding: 3.5rem 0;
+  }
+}
+
+
+/* components */
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: .25em .75em;
+  background-color: var(--btn-bg, var(--clr-neutral-300));
+  color: var(--btn-fg, var(--clr-neutral-900));
+  font-weight: var(--fw-700);
+  font-family: var(--ff-sans);
 }

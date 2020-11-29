@@ -229,3 +229,30 @@ section {
 .article-preview .info > :first-child {
   margin-right: 1rem;
 }
+
+
+
+.cta form {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.cta form > * {
+  /* border: 1px solid red; */
+}
+
+.cta form > div {
+  flex-basis: 100%;
+  flex-grow: 1;
+}
+
+.cta label {
+  display: block;
+}
+
+.cta input {
+  width: 100%;
+  border: 0;
+}

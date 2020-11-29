@@ -120,6 +120,19 @@ body {
   margin-top: 5rem;
 }
 
+.split {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+@media (min-width: 40em) {
+  .split {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
 .container {
   max-width: 50rem;
   margin: 0 auto;

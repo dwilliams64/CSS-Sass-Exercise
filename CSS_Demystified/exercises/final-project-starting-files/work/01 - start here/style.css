@@ -87,6 +87,7 @@ button,
 textarea,
 select {
   font-family: inherit;
+  padding: 0;
 }
 
 body {
@@ -265,7 +266,7 @@ section {
 
 .cta form {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -295,6 +296,19 @@ section {
   border-bottom: 3.5px solid var(--clr-neutral-400);
 }
 
+.cta button {
+  align-self: flex-start;
+}
+
+@media (min-width: 40em) {
+  .cta form {
+    flex-direction: row;
+  }
+
+  .cta button {
+    align-self: center;
+  }
+}
 
 footer {
   padding-bottom: 2em;  
@@ -310,6 +324,8 @@ footer {
 
 .footer-nav {
   display: flex;
+  flex-direction: column;
+  gap: 2em;
 }
 
 .footer-nav > *:first-child {
@@ -323,4 +339,11 @@ footer {
 
 .footer-social a {
   font-weight: var(--fw-200);
+}
+
+@media (min-width: 40em) {
+  .footer-nav {
+    flex-direction: row;
+    gap: 0;
+  }
 }

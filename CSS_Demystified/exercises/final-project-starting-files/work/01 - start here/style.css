@@ -244,6 +244,59 @@ section {
   color: var(--clr-primary-400);
 }
 
+
+
+.primary-header {
+  background-color: var(--clr-primary-400);
+  border-radius: var(--br);
+  min-height: 50vh;
+  padding: 2rem;
+}
+
+
+.primary-nav {
+  position: fixed;
+  bottom: .5em;
+  left: .5em;
+  right: .5em;  
+  padding: .8em 0;   
+  line-height: 0;
+  border-radius: var(--br);
+  background-color: var(--clr-neutral-900);
+  font-family: var(--ff-serif);
+}
+
+.primary-nav ul {
+  display: flex;
+  justify-content: space-around;
+} 
+
+.primary-nav a {
+  color: var(--clr-neutral-200);
+}
+
+@media (min-width: 30em) {
+  .primary-header__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .primary-nav {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .primary-nav ul > * + *{
+    margin-left: 1em;
+  }
+
+  .primary-nav a {
+    color: inherit;
+  }
+}
+
+
 .article-preview h3 {
   font-size: var(--fs-500);
 }
